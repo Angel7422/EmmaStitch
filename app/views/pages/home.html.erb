@@ -1,2 +1,116 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home">
+  <div class="row">
+    <div class="col">
+
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1705120893666-d36e3156b07f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+
+          <h1><strong>EmmaStitch</strong></h1>
+          <p>Des Créations Uniques, Conçues Juste Pour Vous</p>
+
+      </div>
+
+      <div class="section-home">
+        <h2> Couture sur mesure  </h2>
+        <h3>Inclusif et Accessible, Adapté à Chaque Besoin</h3>
+
+        <p> Paiement sécurisé et livraison offerte dès 79€ d'achat</p>
+      </div>
+
+      <div class="section-home">
+        <div id="carousel-home" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1716541424893-734612ddcabb?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1716541424935-e28adbd63ca3?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image 3">
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image 4">
+                </div>
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image 5">
+                </div>
+                <div class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1519211777646-3a7ccf759b64?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Image 6">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+          </button>
+        </div>
+
+      <div class="section-home">
+        <div class="parent-section">
+          <div class="sub-section1">
+            <h2> Présentation </h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <div class="bouton-container">
+                <%= link_to "Découvrez nos Collections", clothings_path, class: "bouton-couture" %>
+
+              </div>
+          </div>
+          <div class="sub-section2">
+            <div class="img-section-home">
+              <img src="https://ecn-neuropsy.com/wp-content/uploads/2023/12/Emmabisbisbis-e1703779369947.jpg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="parent-section">
+          <div class="sub-section2 img-left">
+            <div class="img-section-home">
+              <img src="https://images.unsplash.com/photo-1658587165240-7d06b8f9ff04?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+          </div>
+          <div class="sub-section1">
+            <h2> Nos valeurs </h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <div class="bouton-container">
+                <%= link_to "Découvrez nos Collections", clothings_path, class: "bouton-couture" %>
+              </div>
+          </div>
+        </div>
+
+        <div class="parent-section">
+          <div class="sub-section1">
+            <h2>La boutique </h2>
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <div class="bouton-container">
+                <%= link_to "Découvrez nos Collections", clothings_path, class: "bouton-couture" %>
+              </div>
+          </div>
+          <div class="sub-section2">
+            <div class="img-section-home">
+              <img src="https://images.unsplash.com/photo-1524648829700-99c448a9e88d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
