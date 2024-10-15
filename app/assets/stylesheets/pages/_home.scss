@@ -1,1 +1,110 @@
 // Specific CSS for your home-page
+.container-home {
+  max-width: 1440px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.section-home {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 3px;
+}
+.section-home h2 {
+  margin: 10px;
+  font-size: 56px;
+  color: #f58b7e; /* Peach background color */
+}
+
+.section-home h3 {
+  letter-spacing: 6px;
+  margin: 10px;
+}
+
+.section-home p {
+  margin: 10px;
+}
+
+#carousel-home {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+.carousel-item img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.parent-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 45px 0;
+
+
+  // border: 1px solid #e0e0e0; // Une bordure très légère
+  // border-radius: 8px; // Coins arrondis pour adoucir l'apparence
+  background-color: white; // Fond blanc pour contraster
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.img-section-home {
+  width: 100%; /* Assure que l'image ne dépasse pas la largeur de son conteneur */
+  height: 75%; /* Conserve le ratio d'aspect de l'image */
+}
+
+.sub-section1, .sub-section2 {
+  flex: 1;
+}
+
+.sub-section1 h2 {
+  margin-bottom: 35px;
+}
+
+.sub-section1 p {
+  margin-left: 60px;
+  margin-right: 60px;
+  text-align: center;
+}
+
+
+
+.sub-section2 img {
+  width: 50%; /* Ajuste la taille des images dans la sous-section 2 */
+  height: auto; /* Conserve le ratio d'aspect de l'image */
+}
+
+.img-left {
+  float: left;
+  margin-right: 20px;
+}
+
+.bouton-couture {
+  margin-top: 45px;
+  display: inline-block;
+  padding: 12px 24px; /* Espacement intérieur */
+  font-size: 16px; /* Taille de la police */
+  color: #ffffff; /* Couleur du texte */
+  background-color: #f58b7e; /* Couleur de fond */
+  border: 2px solid #f58b7e; /* Bordure pour l'effet de contraste */
+  border-radius: 20px; /* Bords arrondis pour un look moderne */
+  text-decoration: none; /* Pas de soulignement */
+  text-align: center; /* Centrer le texte */
+  transition: all 0.3s ease; /* Transition pour une animation fluide */
+  font-family: 'Arial', sans-serif; /* Police moderne */
+}
+
+.bouton-couture:hover {
+  background-color: #fb7d6f; /* Couleur plus vive au survol */
+  color: #ffffff; /* Couleur du texte reste blanche */
+  cursor: pointer; /* Change le curseur pour indiquer l'interaction */
+  transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
+.bouton-couture:focus {
+  outline: none; /* Supprime le contour de focus */
+}
