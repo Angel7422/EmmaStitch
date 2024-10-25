@@ -28,15 +28,6 @@
   margin: 10px;
 }
 
-#carousel-home {
-  margin-top: 45px;
-  margin-bottom: 45px;
-}
-.carousel-item img {
-  max-height: 500px;
-  object-fit: cover;
-}
-
 .parent-section {
   display: flex;
   align-items: center;
@@ -81,30 +72,4 @@
 .img-left {
   float: left;
   margin-right: 20px;
-}
-
-.bouton-couture {
-  margin-top: 45px;
-  display: inline-block;
-  padding: 12px 24px; /* Espacement intérieur */
-  font-size: 16px; /* Taille de la police */
-  color: #ffffff; /* Couleur du texte */
-  background-color: #f58b7e; /* Couleur de fond */
-  border: 2px solid #f58b7e; /* Bordure pour l'effet de contraste */
-  border-radius: 20px; /* Bords arrondis pour un look moderne */
-  text-decoration: none; /* Pas de soulignement */
-  text-align: center; /* Centrer le texte */
-  transition: all 0.3s ease; /* Transition pour une animation fluide */
-  font-family: 'Arial', sans-serif; /* Police moderne */
-}
-
-.bouton-couture:hover {
-  background-color: #fb7d6f; /* Couleur plus vive au survol */
-  color: #ffffff; /* Couleur du texte reste blanche */
-  cursor: pointer; /* Change le curseur pour indiquer l'interaction */
-  transform: scale(1.05); /* Légère augmentation de la taille */
-}
-
-.bouton-couture:focus {
-  outline: none; /* Supprime le contour de focus */
 }

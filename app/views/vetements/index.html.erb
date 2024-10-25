@@ -1,37 +1,81 @@
 <div class="container-vetement">
+  <!-- Bannière -->
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1705120893666-d36e3156b07f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
         <h1><strong>EmmaStitch</strong></h1>
         <p>Des Créations Uniques, Conçues Juste Pour Vous</p>
       </div>
+    </div>
+  </div>
 
-      <div class="section-home index-clothings">
-        <h2 class="custom-intro-section"> Collections </h2>
-        <h3>Inclusif et Accessible, Adapté à Chaque Besoin</h3>
-        <p>Paiement sécurisé et livraison offerte dès 79€ d'achat</p>
-      </div>
+  <!-- Section Introduction -->
+  <div class="row section-home index-clothings my-4">
+    <div class="col-12 text-center">
+      <h2 class="custom-intro-section">Vêtements</h2>
+      <h3>Inclusif et Accessible, Adapté à Chaque Besoin</h3>
+      <p>Paiement sécurisé et livraison offerte dès 79€ d'achat</p>
+    </div>
+  </div>
 
-      <div class="section-vetements">
+  <!-- Section Vêtements et Achat -->
+  <div data-controller="card-vetements">
+  <div class="row">
 
-        <div class="mosaique-parent">
-          <div class="mosaique-enfant mosaiquex1">
-            <img src="https://images.unsplash.com/photo-1508808787069-421e7986016e?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-          </div>
-          <div class="mosaique enfant mosaiquex4">
-            <div class="mosaiquex2">
-              <img src="https://images.unsplash.com/photo-1488409467762-3a18c42e36e2?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-              <img src="https://images.unsplash.com/photo-1562779198-651c8b760c00?q=80&w=2965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      <!-- Mosaïque des Vêtements -->
+      <div class="section-vetements col-lg-8 col-md-7 col-12">
+        <div class="mosaique-parent" data-card-vetements-target="imageContainer">
+          <div class="mosaique-enfant">
+            <div class="mosaiquex1">
+              <img src="https://images.unsplash.com/photo-1508808787069-421e7986016e?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
             </div>
-            <div class="mosaiquex2">
-              <img src="https://images.unsplash.com/photo-1569947494657-6837fd7cc18e?q=80&w=3051&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-              <img src="https://images.unsplash.com/photo-1619799382841-479db3616b91?q=80&w=3082&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <div class="mosaiquex4">
+              <div class="mosaiquex2">
+                <img src="https://images.unsplash.com/photo-1488409467762-3a18c42e36e2?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1562779198-651c8b760c00?q=80&w=2965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              </div>
+              <div class="mosaiquex2">
+                <img src="https://images.unsplash.com/photo-1569947494657-6837fd7cc18e?q=80&w=3051&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <img src="https://images.unsplash.com/photo-1619799382841-479db3616b91?q=80&w=3082&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              </div>
             </div>
           </div>
         </div>
       </div>
 
 
+      <!-- Description et Achat -->
+      <div class="sous-section-achat col-lg-4 col-md-5 col-12">
+        <div class="description-article">
+          <h3>Nom de l'article</h3>
+          <p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Prix : 200 €</p>
+        </div>
+        <div class="bouton-achat d-flex flex-column gap-2">
+          <button class="bouton-couture">Acheter</button>
+          <button class="bouton-couture">Message</button>
+        </div>
+      </div>
+
+
+
+      <!-- Section Couleurs -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <h3>Sélectionnez une couleur</h3>
+          <div class="photo-couleur">
+            <img src="https://plus.unsplash.com/premium_photo-1674828601362-afb73c907ebe?q=80&w=2706&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bleu" class="couleur-photo" data-action="click->card-vetements#changeColor" data-vetements-color="blue">
+            <img src="https://images.unsplash.com/photo-1580133318324-f2f76d987dd8?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vert" class="couleur-photo" data-action="click->card-vetements#changeColor" data-vetements-color="green">
+            <img src="https://images.unsplash.com/photo-1582137808224-de22c65933c0?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rouge" class="couleur-photo" data-action="click->card-vetements#changeColor" data-vetements-color="red">
+            <img src="https://images.unsplash.com/photo-1617055407123-3d7130c1f940?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Rose" class="couleur-photo" data-action="click->card-vetements#changeColor" data-vetements-color="pink">
+          </div>
+
+
+        </div>
+      </div>
     </div>
   </div>
+
+
+
 </div>
