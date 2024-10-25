@@ -4,7 +4,7 @@ class ClothingsController < ApplicationController
     @clothings = Clothing.all
   end
 
-  def show
+  def vetement
     @clothing = Clothing.find(params[:id])
   end
 
