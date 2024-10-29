@@ -13,9 +13,12 @@ class ClothingsController < ApplicationController
   end
 
   def create
-    @clothing = Clothing.new
-    @clothing.save
-    redirect_to @clothing
+    @clothing = Clothing.new(clothing_params)
+    if @clothing.save
+      redirect_to @clothing, notice: 'Clothing was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -23,14 +26,26 @@ class ClothingsController < ApplicationController
   end
 
   def update
-    @clothing = Clothing.find(params[:id])
-    @clothing.save
-    redirect_to @clothing
+    if @clothing.update(clothing_params)
+      redirect_to @clothing, notice: 'Clothing was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @clothing = Clothing.find(params[:id])
     @clothing.destroy
-    redirect_to @clothing
+    redirect_to @clothing, notice: 'Clothing was successfully destroyed.'
+  end
+
+  private
+
+  def set_clothing
+    @clothing = Clothing.find(params[:id])
+  end
+
+  def clothing_params
+    params.require(:clothing).permit(:name, :description, :price, :photo)
   end
 end
