@@ -1,2 +1,0 @@
-class SousvetementsController < ApplicationController
-end
