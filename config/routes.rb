@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :clothings do
     resources :vetements
-    resources :sousvetements
-    resources :accessoires
+
+
   end
   resources :bookings
   resources :orders
-  resources :orders_management
   resources :reviews
   resources :users
 end
