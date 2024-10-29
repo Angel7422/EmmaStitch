@@ -12,7 +12,7 @@ export default class extends Controller {
         "https://plus.unsplash.com/premium_photo-1663127357106-fbd8a835e07f?q=80&w=2344&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1614446213011-55a93c1311f5?q=80&w=2266&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1466193341027-56e68017ee2d?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1580634595666-686324a25441?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         // Ajoutez d'autres images bleues ici
       ],
       green: [
@@ -54,7 +54,7 @@ export default class extends Controller {
   }
 
   updateMosaic(images) {
-    this.imageContainerTarget.innerHTML = `<div class="image-wrapper">` +images
+    this.imageContainerTarget.innerHTML = `<div class="img-js-wrapper">` +images
       .map(src => `<img src="${src}" alt="Image de couleur ${src}" class="img-fluid vetements-image">`)
       .join("") + `</div>`;
     console.log("Mosaïque mise à jour avec de nouvelles images."); // Log pour confirmer que la mosaïque est mise à jour
