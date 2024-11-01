@@ -29,7 +29,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Mon compte</a>
               <a class="dropdown-item" href="#">Créations en cours</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
+                            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
           <!--li class="nav-item"-->
