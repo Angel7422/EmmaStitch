@@ -1,6 +1,5 @@
 class VetementsController < ApplicationController
-
   def index
-    @clothings = Clothing.all
+    @clothing = policy_scope(Clothing)
   end
 end
