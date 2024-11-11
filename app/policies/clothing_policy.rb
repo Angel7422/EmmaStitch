@@ -1,4 +1,6 @@
 class ClothingPolicy < ApplicationPolicy
+  attr_reader :user, :clothing
+
   # NOTE: Up to Pundit v2.3.1, the inheritance was declared as
   # `Scope < Scope` rather than `Scope < ApplicationPolicy::Scope`.
   # In most cases the behavior will be identical, but if updating existing
@@ -14,8 +16,24 @@ class ClothingPolicy < ApplicationPolicy
     true
   end
 
+  def index_sous_vetements?
+    true
+  end
+
+  def index_accessoires?
+    true
+  end
+
+  def index_vetements?
+    true
+  end
+
   def vetement?
     true
+  end
+
+  def edit?
+    user.admin?
   end
 
   def create?
@@ -24,25 +42,21 @@ class ClothingPolicy < ApplicationPolicy
 
   def update?
     user.admin?
-    clothing.user == user
   end
 
   def destroy?
     user.admin?
-    clothing.user == user
   end
 
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
 
     def resolve
       if user.admin?
         scope.all
       else
-        scope.where(user: user)
+        scope.none
+        # scope.where(user: user)
       end
     end
   end
