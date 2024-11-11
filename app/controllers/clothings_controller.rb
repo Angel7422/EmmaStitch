@@ -1,28 +1,38 @@
 class ClothingsController < ApplicationController
-  # before_action :set_clothing, only: [:index, :vetement]
-  before_action :authorize_clothing, only: [:new, :edit, :create, :edit, :update, :destroy]
-
+  # before_action :set_clothing, only: [:show]
+  # before_action :authorize_admin, only: [:new, :create, :edit, :update, :destroy]
+  # after_action :verify_policy_scoped, only: [:index, :index_vetements, :index_sous_vetements, :index_accessoires]
   def index
-    @clothing = policy_scope(Clothing)
-    @clothing = Clothing.all
+    @clothings = policy_scope(Clothing)
   end
 
-  def vetement
+  def index_vetements
+    @clothings = Clothing.where(category: 'vetements')
+    @clothing = Clothing.new
+    render :index_vetements
+  end
+
+  def index_sous_vetements
+    @clothings = Clothing.where(category: 'sous-vetements')
+    render :index_sous_vetements
+  end
+
+  def index_accessoires
+    @clothings = Clothing.where(category: 'accessoires')
+    render :index_accessoires
   end
 
   def show
-    @clothing = Clothing.find(params[:id])
+    # @clothing = Clothing.find(params[:id])
   end
 
   def new
     @clothing = Clothing.new
-    authorize @clothing
   end
 
   def create
     @clothing = Clothing.new(clothing_params)
     @clothing.user = current_user
-    authorize @clothing
     if @clothing.save
       redirect_to clothing_path(@clothing), notice: 'Clothing was successfully created.'
     else
@@ -31,24 +41,29 @@ class ClothingsController < ApplicationController
   end
 
   def edit
-    authorize @clothing
     @clothing = Clothing.find(params[:id])
   end
 
   def update
-    authorize @clothing
+
     if @clothing.update(clothing_params)
-      redirect_to clothing_path(@clothing), notice: 'Clothing was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to clothing_path(@clothing), notice: 'Clothing was successfully updated.' }
+        format.json { render json: { message: 'Clothing updated successfully' }, status: :ok }
+      end
     else
-      render :edit, status: :unprocessable_entity
+      respond_to do |format|
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: { errors: @clothing.errors.full_messages }, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-    authorize @clothing
     @clothing = Clothing.find(params[:id])
+    authorize @clothing
     @clothing.destroy
-    redirect_to clothing_path(@clothing), notice: 'Clothing was successfully destroyed.'
+    redirect_to clothings_path, notice: 'Clothing was successfully destroyed.'
   end
 
   private
@@ -57,9 +72,9 @@ class ClothingsController < ApplicationController
   #   @clothing = Clothing.find(params[:id])
   # end
 
-  def authorize_clothing
-    authorize Clothing
-  end
+  # def authorize_admin
+  #   authorize Clothing, :admin?
+  # end
 
   def clothing_params
     params.require(:clothing).permit(:name, :description, :price, :photo)
