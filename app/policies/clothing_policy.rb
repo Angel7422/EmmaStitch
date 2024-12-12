@@ -28,7 +28,7 @@ class ClothingPolicy < ApplicationPolicy
     true
   end
 
-  def vetement?
+  def show?
     true
   end
 

@@ -23,7 +23,8 @@ class ClothingsController < ApplicationController
   end
 
   def show
-    # @clothing = Clothing.find(params[:id])
+    @clothing = Clothing.find(params[:id])
+    authorize @clothing
   end
 
   def new
@@ -31,7 +32,14 @@ class ClothingsController < ApplicationController
   end
 
   def create
+    # if current_user.nil?
+    #   flash[:alert] = "You must be logged in to create a clothing."
+    #   redirect_to login_path
+    #   return
+    # end
+    # logger.debug "current_user: #{current_user.inspect}"
     @clothing = Clothing.new(clothing_params)
+    authorize @clothing
     @clothing.user = current_user
     if @clothing.save
       redirect_to clothing_path(@clothing), notice: 'Clothing was successfully created.'
@@ -77,6 +85,6 @@ class ClothingsController < ApplicationController
   # end
 
   def clothing_params
-    params.require(:clothing).permit(:name, :description, :price, :photo)
+    params.require(:clothing).permit(:name, :description, :price, :photo, :user_id)
   end
 end
