@@ -9,7 +9,7 @@ class ClothingsController < ApplicationController
   def index_vetements
     @clothings = Clothing.where(category: 'vetements')
     @clothing = Clothing.new
-    render :index_vetements
+    # render :index_vetements
   end
 
   def index_sous_vetements
@@ -43,8 +43,9 @@ class ClothingsController < ApplicationController
     @clothing.user = current_user
     if @clothing.save
       redirect_to clothing_path(@clothing), notice: 'Clothing was successfully created.'
+      #redirect_to vetements_clothings_path pour voir tous les vêtements que j'ai créé.
     else
-      render :new, status: :unprocessable_entity
+      render :index_vetements, status: :unprocessable_entity
     end
   end
 
@@ -85,6 +86,6 @@ class ClothingsController < ApplicationController
   # end
 
   def clothing_params
-    params.require(:clothing).permit(:name, :description, :price, :photo, :user_id)
+    params.require(:clothing).permit(:name, :description, :price, :available_sizes, :category, :photo, :user_id)
   end
 end

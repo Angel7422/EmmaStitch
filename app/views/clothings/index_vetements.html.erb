@@ -47,6 +47,7 @@
             <%= f.input :name %>
             <%= f.input :description %>
             <%= f.input :available_sizes %>
+            <%= f.input :category %>
             <%= f.input :price %>
             <%= f.submit %>
           <% end %>
@@ -57,9 +58,11 @@
       <!-- Description et Achat -->
       <div class="sous-section-achat col-lg-4 col-md-5 col-12">
         <div class="description-article">
-          <h3>Nom de l'article</h3>
-          <p>Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <p> 200 <i class="fa-solid fa-euro-sign"></i></p>
+          <% @clothings.each do |clothing| %>
+            <h3><%= clothing.name %></h3>
+            <p><%= clothing.description %></p>
+            <p> <%= clothing.price %> <i class="fa-solid fa-euro-sign"></i></p>
+          <% end %>
         </div>
         <div class="bouton-achat d-flex flex-column gap-2">
           <button class="bouton-couture">Acheter</button>
