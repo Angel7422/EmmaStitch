@@ -13,10 +13,10 @@
 Clothing.destroy_all
 User.destroy_all
 
-admin = User.create!(
-  email: 'admin@test.com',
-  password: 'password123'
-)
+  admin = User.create!(
+    email: 'admin@test.com',
+    password: 'password123'
+  )
 
 # Création d'articles de vêtements
 Clothing.create([
